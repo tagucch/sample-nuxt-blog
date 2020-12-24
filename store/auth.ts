@@ -66,9 +66,7 @@ export const actions = {
 
   // @ts-ignore
   async logout({ commit, state }) {
-    const res = await axios.put('http://localhost:3000/logout', {
-      headers: { 'auth': state.token }
-    })
+    const res = await axios.put('http://localhost:3000/logout', {}, { headers: { 'auth': state.token } })
     const success = res.data
     if (success) {
       commit('removeMember')
