@@ -3,7 +3,7 @@
     <h1 class="title">logout</h1>
     <p>ログアウトしました</p>
     <div>
-      <NuxtLink href="/">ホームに戻る</NuxtLink>
+      <NuxtLink to="/">ホームに戻る</NuxtLink>
     </div>
   </div>
 </template>
