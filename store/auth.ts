@@ -22,6 +22,10 @@ export const mutations = {
     }
   },
   // @ts-ignore
+  removeToken(state) {
+    state.token = ''
+  },
+  // @ts-ignore
   saveMember(state, member) {
     if (member) {
       state.member = member
@@ -71,6 +75,7 @@ export const actions = {
     if (success) {
       commit('removeMember')
       commit('removeLogin')
+      commit('removeToken')
       return success
     }
     return success
