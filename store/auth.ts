@@ -51,10 +51,12 @@ export const mutations = {
 export const actions = {
   // @ts-ignore
   async login({ commit }, { email, password }) {
-    const res = await axios.post('http://localhost:3000/login', {
+    // @ts-ignore
+    const res = await this.$axios.post('/login', {
       email,
       password
     })
+    // @ts-ignore
     const { token, member, isSuccessLogin } = res.data
     if (isSuccessLogin) {
       // @ts-ignore
@@ -70,7 +72,9 @@ export const actions = {
 
   // @ts-ignore
   async logout({ commit, state }) {
-    const res = await axios.put('http://localhost:3000/logout', {}, { headers: { 'auth': state.token } })
+    // @ts-ignore
+    const res = await this.$axios.put('/logout')
+    // @ts-ignore
     const success = res.data
     if (success) {
       commit('removeMember')
