@@ -1,10 +1,10 @@
-import axios from 'axios'
+import Cookies from 'js-cookie'
 
 export const state = {
   token: null,
   member: {
-    email: '',
-    password: ''
+    name: '',
+    email: ''
   },
   isSuccessLogin: false
 }
@@ -34,8 +34,8 @@ export const mutations = {
   // @ts-ignore
   removeMember(state) {
     state.member = {
-      email: '',
-      password: ''
+      name: '',
+      email: ''
     }
   },
   // @ts-ignore
@@ -71,7 +71,7 @@ export const actions = {
   },
 
   // @ts-ignore
-  async logout({ commit, state }) {
+  async logout({ commit }) {
     // @ts-ignore
     const res = await this.$axios.put('/logout')
     // @ts-ignore
