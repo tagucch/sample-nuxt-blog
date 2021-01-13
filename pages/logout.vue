@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h1 class="title">logout</h1>
+    <h1 class="title">ログアウトページ</h1>
     <p>ログアウトしました</p>
     <div>
-      <NuxtLink to="/">ホームに戻る</NuxtLink>
+      <button><NuxtLink to="/">ホームに戻る</NuxtLink></button>
     </div>
   </div>
 </template>

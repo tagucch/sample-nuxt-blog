@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">login</h1>
+    <h1 class="title">ログインページ</h1>
     <input id="email" type="email" placeholder="email" v-model="email">
     <input id="password" type="password" placeholder="password" v-model="password">
     <button class="submit" @click="signin()">Submit</button>
@@ -42,6 +42,7 @@ export default Vue.extend({
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
