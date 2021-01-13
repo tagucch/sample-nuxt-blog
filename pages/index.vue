@@ -2,15 +2,21 @@
   <div class="container">
     <div>
       <h1 class="title">sample-nuxt-blog</h1>
+      <div class="link">リンク</div>
+      <div>
+        <NuxtLink to="/articles/new">新規作成</NuxtLink>
+      </div>
       <div>Logged in: {{ isSuccessLogin }}</div>
       <div>token: {{ token }}</div>
       <template v-for="(article, i) in articles">
         <div class="articleContainer" :key="i">
-          <div class="title">
-            {{ article.title }}
+          <div class="articleTitle">
+            <NuxtLink :to="`/articles/${article.id}`">
+              {{ article.title }}
+            </NuxtLink>
           </div>
-          <div class="body">
-            {{ article.body }}
+          <div class="articleBody">
+            {{ article.summary }}
           </div>
         </div>
       </template>
