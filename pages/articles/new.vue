@@ -12,6 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import axios from 'axios'
+import { mapActions } from 'vuex';
 
 export default Vue.extend({
   data() {
@@ -19,15 +20,16 @@ export default Vue.extend({
       article: {
         title: '' as string,
         body: '' as string,
-      },
+      }
     }
   },
   methods: {
+    ...mapActions('article', ['saveArticle']),
     async submit() {
-      const res = await axios.post('http://localhost:3000/article', {
-        // @ts-ignore
-        article: this.article,
-      })
+      const success = await this.saveArticle({ article: this.article })
+      if (success) {
+        this.$router.push('/')
+      }
     },
   },
 })
