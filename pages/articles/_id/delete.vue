@@ -18,10 +18,6 @@
     <div>
       <button><NuxtLink to="/">戻る</NuxtLink></button>
     </div>
-    <template v-if="member.member && article.author.name === member.member.name">
-      <NuxtLink :to="`/articles/${article.id}/edit`">編集</NuxtLink>
-      <NuxtLink :to="`/articles/${article.id}/delete`">削除</NuxtLink>
-    </template>
   </div>
 </template>
 

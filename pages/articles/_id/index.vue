@@ -17,8 +17,8 @@
       <p>更新日: {{ article.updatedAt }}</p>
     </div>
     <template v-if="member.member && article.author.name === member.member.name">
-      <NuxtLink :to="`/articles/${article.id}/edit`">編集</NuxtLink>
-      <NuxtLink :to="`/articles/${article.id}/delete`">削除</NuxtLink>
+      <button><NuxtLink :to="`/articles/${article.id}/edit`">編集</NuxtLink></button>
+      <button><NuxtLink :to="`/articles/${article.id}/delete`">削除</NuxtLink></button>
     </template>
   </div>
 </template>
